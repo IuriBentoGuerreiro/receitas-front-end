@@ -1,0 +1,56 @@
+<div class="adicionar-receita-container">
+  <h1>Adicionar Receita</h1>
+  <form (ngSubmit)="adicionarReceita()" #receitaForm="ngForm">
+    
+    <!-- Campo Título -->
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input
+        type="text"
+        id="titulo"
+        [(ngModel)]="receita.titulo"
+        name="titulo"
+        required
+        placeholder="Digite o título da receita"
+        class="form-control"
+      />
+      <div *ngIf="receitaForm.submitted && !receita.titulo" class="error-message">
+        O título é obrigatório.
+      </div>
+    </div>
+
+    <!-- Campo Ingredientes -->
+    <div class="form-group">
+      <label for="ingredientes">Ingredientes:</label>
+      <textarea
+        id="ingredientes"
+        [(ngModel)]="receita.ingredientes"
+        name="ingredientes"
+        required
+        placeholder="Liste os ingredientes"
+        class="form-control"
+      ></textarea>
+      <div *ngIf="receitaForm.submitted && !receita.ingredientes" class="error-message">
+        Os ingredientes são obrigatórios.
+      </div>
+    </div>
+
+    <!-- Campo Instruções -->
+    <div class="form-group">
+      <label for="instrucoes">Instruções:</label>
+      <textarea
+        id="instrucoes"
+        [(ngModel)]="receita.instrucoes"
+        name="instrucoes"
+        required
+        placeholder="Descreva o modo de preparo"
+        class="form-control"
+      ></textarea>
+      <div *ngIf="receitaForm.submitted && !receita.instrucoes" class="error-message">
+        As instruções são obrigatórias.
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Adicionar Receita</button>
+  </form>
+</div>

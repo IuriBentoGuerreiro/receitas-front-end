@@ -1,0 +1,9 @@
+<div *ngIf="receita" class="receita-detalhes-container">
+  <h1 class="receita-titulo">{{ receita.titulo }}</h1>
+  <div class="receita-conteudo">
+    <h3>Ingredientes:</h3>
+    <p class="receita-ingredientes">{{ receita.ingredientes }}</p>
+    <h3>Instruções:</h3>
+    <p class="receita-instrucoes">{{ receita.instrucoes }}</p>
+  </div>
+</div>

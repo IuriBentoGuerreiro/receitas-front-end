@@ -1,0 +1,15 @@
+<div class="receitas-container">
+  <h1>Receitas</h1>
+  <div *ngIf="receitas.length === 0" class="no-receitas">
+    <p>Nenhuma receita encontrada.</p>
+  </div>
+  <ul *ngIf="receitas.length > 0">
+    <li *ngFor="let receita of receitas" class="receita-item">
+      <div class="receita-info">
+        <h2>{{ receita.titulo }}</h2>
+        <p><strong>Ingredientes:</strong> {{ receita.ingredientes }}</p>
+      </div>
+      <button class="ver-detalhes" (click)="verReceita(receita.id)">Ver Detalhes</button>
+    </li>
+  </ul>
+</div>
